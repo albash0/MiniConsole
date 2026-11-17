@@ -1,0 +1,486 @@
+{
+  "document": "You don't need to make this alex!",
+  "units": "mm",
+  "coordinateMap": {
+    "pcb_x": "70.1 - (Fusion x + 32.05)",
+    "pcb_y": "30.1 - (Fusion z + 20.05)",
+    "pcb_front_normal": "Fusion +Y",
+    "note": "180-degree rotation of V1, followed by symmetric D-pad correction and independent S3 placement"
+  },
+  "board": {
+    "width": 70.1,
+    "height": 30.1,
+    "thickness": 1.6,
+    "mounts": [
+      [
+        68.0,
+        28.1
+      ],
+      [
+        2.1,
+        28.1
+      ],
+      [
+        68.0,
+        2.0
+      ],
+      [
+        2.1,
+        2.0
+      ]
+    ],
+    "mount_hole_diameter_mm": 2.2
+  },
+  "button_centers": {
+    "UP": [
+      58.13,
+      8.59825
+    ],
+    "DOWN": [
+      58.13,
+      21.29825
+    ],
+    "LEFT": [
+      54.82,
+      14.94825
+    ],
+    "RIGHT": [
+      61.44,
+      14.94825
+    ],
+    "A": [
+      12.41,
+      21.29825
+    ],
+    "B": [
+      12.41,
+      8.59825
+    ]
+  },
+  "s3": {
+    "center": [
+      13.3484,
+      18.64
+    ],
+    "size_mm": [
+      18.0,
+      23.5
+    ],
+    "pitch_mm": 2.54,
+    "row_gap_mm": 15.24,
+    "usb": "toward carrier bottom edge",
+    "geometry_source": "Published dimensions and independent footprint; Fusion used only for placement",
+    "original_center": [
+      13.3484,
+      16.4724
+    ],
+    "shift_toward_usb_mm": 2.1676,
+    "usb_envelope_extension_mm": 1.2,
+    "usb_envelope_source": "Independent footprint outline; generic USB shell setback must be fit-checked",
+    "antenna_keepout": [
+      6.8,
+      7.09,
+      19.9,
+      10.69
+    ],
+    "last_header_center_y": 28.8,
+    "last_header_copper_edge_clearance": 0.5,
+    "relative_rotation_after_device_flip_deg": 180
+  },
+  "battery": {
+    "outline": [
+      23.05,
+      0.01,
+      40.0,
+      30.0
+    ],
+    "thickness": 8.0
+  },
+  "switch": {
+    "pin_x": 3.2689,
+    "pin_y": [
+      11.13025,
+      8.63025,
+      6.13025
+    ],
+    "body_overhang": 6.1469,
+    "body_direction": -1,
+    "label_positions": {
+      "ON": [
+        1.6,
+        4.2
+      ],
+      "OFF": [
+        1.6,
+        13.1
+      ]
+    }
+  },
+  "revision": "1.3",
+  "holding_orientation": "D-pad right, B upper left, A lower left; USB bottom",
+  "dpad_symmetry": {
+    "center": [
+      58.13,
+      14.94825
+    ],
+    "horizontal_half_spacing": 3.31,
+    "vertical_half_spacing": 6.35
+  },
+  "label_positions": {
+    "UP": [
+      58.13,
+      4.95
+    ],
+    "DOWN": [
+      58.13,
+      26.39825
+    ],
+    "LEFT": [
+      51.25,
+      14.94825
+    ],
+    "RIGHT": [
+      65.01,
+      14.94825
+    ],
+    "A": [
+      12.41,
+      26.4
+    ],
+    "B": [
+      12.41,
+      3.6
+    ]
+  },
+  "connectors": {
+    "J2": {
+      "center": [
+        29.6,
+        22.1
+      ],
+      "pitch_x": -2.54
+    },
+    "J3": {
+      "center": [
+        15.6,
+        27
+      ],
+      "pitch_x": 2.54
+    },
+    "J4": {
+      "center": [
+        26.3,
+        14.95
+      ],
+      "pitch_x": -2.54
+    }
+  },
+  "piezo": {
+    "center": [
+      39.6,
+      22.1
+    ],
+    "rotation_deg": 180
+  },
+  "passives": {
+    "R1": {
+      "center": [
+        12.0,
+        14.95
+      ],
+      "rotation_deg": 0,
+      "package": "Axial film, DIN0207, horizontal",
+      "lead_pitch_mm": 7.62,
+      "body_length_mm": 6.3,
+      "body_diameter_mm": 2.5,
+      "drill_mm": 0.8,
+      "power_W": 0.25
+    },
+    "C1": {
+      "center": [
+        28.65,
+        5.6
+      ],
+      "rotation_deg": 180
+    },
+    "C2": {
+      "center": [
+        32.3,
+        5.6
+      ],
+      "package": "0805",
+      "value": "4.7uF",
+      "rotation_deg": 0
+    },
+    "R2": {
+      "center": [
+        43.0,
+        6.2
+      ],
+      "value": "4.7k",
+      "package": "0603",
+      "purpose": "IIC SCL pull-up"
+    },
+    "R3": {
+      "center": [
+        46.3,
+        6.2
+      ],
+      "value": "4.7k",
+      "package": "0603",
+      "purpose": "IIC SDA pull-up"
+    }
+  },
+  "variant": "TFT114",
+  "derived_from": "OLED carrier V1.4",
+  "tft": {
+    "module": "LCDWIKI / QDtech MSP1141",
+    "controller": "ST7789V",
+    "resolution": [
+      135,
+      240
+    ],
+    "landscape_resolution": [
+      240,
+      135
+    ],
+    "outline": [
+      19.3,
+      1.05,
+      31.4,
+      28.0
+    ],
+    "rotation_deg": 0,
+    "header": {
+      "x": [
+        26.11,
+        28.65,
+        31.19,
+        33.73,
+        36.27,
+        38.81,
+        41.35,
+        43.89
+      ],
+      "y": 2.49,
+      "order": [
+        "GND",
+        "VCC",
+        "SCL",
+        "SDA",
+        "RES",
+        "DC",
+        "CS",
+        "BLK"
+      ],
+      "side": "top",
+      "pitch_mm": 2.54
+    },
+    "mounts": [
+      [
+        21.8,
+        3.55
+      ],
+      [
+        48.2,
+        3.55
+      ],
+      [
+        48.2,
+        26.55
+      ]
+    ],
+    "unused_mounts": [
+      [
+        21.8,
+        26.55
+      ]
+    ],
+    "module_mount_drill_mm": 2.0,
+    "carrier_mount_drill_mm": 2.2,
+    "mount_spacing_mm": [
+      26.4,
+      23.0
+    ],
+    "glass_outline": [
+      19.3,
+      6.25,
+      31.0,
+      17.6
+    ],
+    "active_area": [
+      21.3,
+      7.62,
+      24.91,
+      14.86
+    ],
+    "stand_off_mm": 4.0,
+    "max_module_underside_component_height_mm": 1.0,
+    "mechanical_source": "https://www.lcdwiki.com/zh/images/6/62/1.14inch_IPS_size.png",
+    "listing_size_mm": [
+      30.4,
+      28.0
+    ],
+    "dimension_discrepancy": "Manufacturer drawing uses 31.4mm width; envelope and hole pattern follow that drawing. Fit-check the seller batch.",
+    "chip_select": "J1 pin 7 tied to GND, single SPI peripheral; firmware CS=-1"
+  },
+  "gpio": {
+    "A": 7,
+    "B": 2,
+    "UP": 10,
+    "RIGHT": 11,
+    "LEFT": 12,
+    "DOWN": 13,
+    "TFT_SCK": 8,
+    "TFT_MOSI": 9,
+    "TFT_RST": 1,
+    "TFT_DC": 6,
+    "TFT_CS": -1,
+    "TFT_BL": 43,
+    "BUZZER_GPIO4": 4,
+    "IIC_SCL": 44,
+    "IIC_SDA": 5
+  },
+  "date": "2026-10-14",
+  "case_mount_source": {
+    "file": "MountingHole.dxf",
+    "sha256": "baca7b2a5c13c18a80f854257a7385c1f9426d668a42edbc14af5a3a22860683",
+    "units": "mm",
+    "spacing_mm": [
+      65.9,
+      26.1
+    ],
+    "coordinate_map": {
+      "pcb_x": "DXF x + 38.05000",
+      "pcb_y": "10.05000 - DXF y"
+    },
+    "registration": "Existing D-pad Up/Down centreline; corroborated by display horizontal centre and case centre.",
+    "DXF_hole_diameter_mm": 2.0,
+    "DXF_boss_diameter_mm": 4.0,
+    "carrier_clearance_hole_mm": 2.2,
+    "note": "Only four case holes move. Retain 70.1 x 30.1 outline, display mounts, controls and USB placement."
+  },
+  "iic": {
+    "reference": "J5",
+    "header": "1x04 2.54mm through-hole, front mount",
+    "position": "Top edge above UP",
+    "x": [
+      54.32,
+      56.86,
+      59.4,
+      61.94
+    ],
+    "y": 1.55,
+    "front_left_to_right": [
+      "GND",
+      "VCC",
+      "SCL",
+      "SDA"
+    ],
+    "vcc_V": 3.3,
+    "gpio": {
+      "SCL": 44,
+      "SDA": 5
+    },
+    "net_order": [
+      "GND",
+      "+3V3",
+      "IIC_SCL",
+      "IIC_SDA"
+    ],
+    "pullups": "R2/R3 4.7k to 3V3 fitted",
+    "body_envelope_mm": [
+      53.05,
+      0.28,
+      10.16,
+      2.54
+    ],
+    "pad_mm": [
+      1.8,
+      1.8
+    ],
+    "drill_mm": 1.0,
+    "ground_stitch_via_mm": [
+      14.0,
+      17.0
+    ]
+  },
+  "dpad_adjustment": {
+    "inward_per_side_mm": 0.5,
+    "center_distance_mm": 6.62,
+    "nominal_button_body_gap_mm": 0.62,
+    "case_note": "Move case LEFT and RIGHT openings 0.50 mm inward; Up/Down and mounting holes are unchanged."
+  },
+  "testpads": [
+    {
+      "reference": "TP1",
+      "label": "GND",
+      "net": "GND",
+      "center_mm": [
+        65.8,
+        6.5
+      ],
+      "diameter_mm": 1.5,
+      "side": "rear",
+      "paste": false
+    },
+    {
+      "reference": "TP2",
+      "label": "3V3",
+      "net": "+3V3",
+      "center_mm": [
+        65.8,
+        10.5
+      ],
+      "diameter_mm": 1.5,
+      "side": "rear",
+      "paste": false
+    },
+    {
+      "reference": "TP3",
+      "label": "BAT",
+      "net": "BAT_SW",
+      "center_mm": [
+        65.8,
+        14.5
+      ],
+      "diameter_mm": 1.5,
+      "side": "rear",
+      "paste": false
+    },
+    {
+      "reference": "TP4",
+      "label": "SCL",
+      "net": "IIC_SCL",
+      "center_mm": [
+        65.8,
+        18.5
+      ],
+      "diameter_mm": 1.5,
+      "side": "rear",
+      "paste": false
+    },
+    {
+      "reference": "TP5",
+      "label": "SDA",
+      "net": "IIC_SDA",
+      "center_mm": [
+        65.8,
+        22.5
+      ],
+      "diameter_mm": 1.5,
+      "side": "rear",
+      "paste": false
+    }
+  ],
+  "ground_stitches_mm": [
+    [
+      14.0,
+      17.0
+    ],
+    [
+      25.8,
+      21.6
+    ]
+  ]
+}

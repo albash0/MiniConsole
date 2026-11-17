@@ -1,0 +1,226 @@
+{
+  "revision": "1.7",
+  "date": "2026-10-14",
+  "coordinate_check_tolerance_mm": 1e-05,
+  "dpad_center_mm": [
+    58.13,
+    14.94825
+  ],
+  "dpad_horizontal_half_spacing_mm": 3.31,
+  "up_down_collinear": true,
+  "left_right_symmetric": true,
+  "B_above_A_on_left": true,
+  "S3_USB_direction": "bottom",
+  "S3_center_mm": [
+    13.3484,
+    18.64
+  ],
+  "USB_envelope_face_y_mm": 31.59,
+  "OLED_header_side": "top",
+  "OLED_order_front_left_to_right": [
+    "GND",
+    "VCC",
+    "SCL",
+    "SDA"
+  ],
+  "plated_vias": 12,
+  "plated_component_holes": 61,
+  "nonplated_mount_holes": 8,
+  "smd_lands": 9,
+  "PTH_mask_openings": "both sides verified",
+  "SMD_mask_and_paste": "front verified",
+  "generic_module_physical_fit": "not yet verified",
+  "R1": {
+    "value": "220 ohm",
+    "power_W": 0.25,
+    "type": "Through-hole axial carbon-film or metal-film",
+    "center_mm": [
+      30.5,
+      28.5
+    ],
+    "hole_pitch_mm": 7.62,
+    "drill_mm": 0.8,
+    "body_mm": [
+      6.3,
+      2.5
+    ],
+    "assembly": "Mount flat; trim rear leads below 1mm"
+  },
+  "drc_violations": 0,
+  "unconnected_items": 0,
+  "schematic_parity_issues": 0,
+  "erc_violations": 0,
+  "kicad": "10.0.1",
+  "case_mount_centers_mm": [
+    [
+      2.1,
+      2.0
+    ],
+    [
+      2.1,
+      28.1
+    ],
+    [
+      68.0,
+      2.0
+    ],
+    [
+      68.0,
+      28.1
+    ]
+  ],
+  "case_mount_spacing_mm": [
+    65.9,
+    26.1
+  ],
+  "case_mount_NPTH_diameter_mm": 2.2,
+  "case_mount_source": {
+    "file": "MountingHole.dxf",
+    "sha256": "baca7b2a5c13c18a80f854257a7385c1f9426d668a42edbc14af5a3a22860683",
+    "units": "mm",
+    "spacing_mm": [
+      65.9,
+      26.1
+    ],
+    "coordinate_map": {
+      "pcb_x": "DXF x + 38.05000",
+      "pcb_y": "10.05000 - DXF y"
+    },
+    "registration": "Existing D-pad Up/Down centreline; corroborated by display horizontal centre and case centre.",
+    "DXF_hole_diameter_mm": 2.0,
+    "DXF_boss_diameter_mm": 4.0,
+    "carrier_clearance_hole_mm": 2.2,
+    "note": "Only four case holes move. Retain 70.1 x 30.1 outline, display mounts, controls and USB placement."
+  },
+  "case_mount_min_drill_to_board_edge_mm": 0.9,
+  "tracks_and_vias_unchanged": false,
+  "outline_and_display_mounts_unchanged": true,
+  "BOM_unchanged": false,
+  "NPTH_Excellon_checked_against_DXF": true,
+  "EAGLE_case_mounts_checked": true,
+  "existing_component_positions_unchanged": false,
+  "existing_pad_geometry_unchanged": true,
+  "existing_routes_preserved_except_TFT_CS": false,
+  "iic": {
+    "reference": "J5",
+    "header": "1x04 2.54mm through-hole, front mount",
+    "position": "Top edge above UP",
+    "x": [
+      54.32,
+      56.86,
+      59.4,
+      61.94
+    ],
+    "y": 1.55,
+    "front_left_to_right": [
+      "GND",
+      "VCC",
+      "SCL",
+      "SDA"
+    ],
+    "vcc_V": 3.3,
+    "gpio": {
+      "SCL": 8,
+      "SDA": 9
+    },
+    "net_order": [
+      "GND",
+      "+3V3",
+      "OLED_SCL",
+      "OLED_SDA"
+    ],
+    "pullups": "OLED module pull-ups; external devices must use 3V3 pull-ups",
+    "body_envelope_mm": [
+      53.05,
+      0.28,
+      10.16,
+      2.54
+    ],
+    "pad_mm": [
+      1.8,
+      1.8
+    ],
+    "drill_mm": 1.0
+  },
+  "testpads": [
+    {
+      "reference": "TP1",
+      "label": "GND",
+      "net": "GND",
+      "center_mm": [
+        65.8,
+        6.5
+      ],
+      "diameter_mm": 1.5,
+      "side": "rear",
+      "paste": false
+    },
+    {
+      "reference": "TP2",
+      "label": "3V3",
+      "net": "+3V3",
+      "center_mm": [
+        65.8,
+        10.5
+      ],
+      "diameter_mm": 1.5,
+      "side": "rear",
+      "paste": false
+    },
+    {
+      "reference": "TP3",
+      "label": "BAT",
+      "net": "BAT_SW",
+      "center_mm": [
+        65.8,
+        14.5
+      ],
+      "diameter_mm": 1.5,
+      "side": "rear",
+      "paste": false
+    },
+    {
+      "reference": "TP4",
+      "label": "SCL",
+      "net": "OLED_SCL",
+      "center_mm": [
+        65.8,
+        18.5
+      ],
+      "diameter_mm": 1.5,
+      "side": "rear",
+      "paste": false
+    },
+    {
+      "reference": "TP5",
+      "label": "SDA",
+      "net": "OLED_SDA",
+      "center_mm": [
+        65.8,
+        22.5
+      ],
+      "diameter_mm": 1.5,
+      "side": "rear",
+      "paste": false
+    }
+  ],
+  "dpad_adjustment": {
+    "inward_per_side_mm": 0.5,
+    "center_distance_mm": 6.62,
+    "nominal_button_body_gap_mm": 0.62,
+    "case_note": "Move case LEFT and RIGHT openings 0.50 mm inward; Up/Down and mounting holes are unchanged."
+  },
+  "unrelated_component_positions_unchanged": true,
+  "unrelated_routes_preserved": true,
+  "gerber_sha256": {
+    "MiniConsoleCarrier-B_Cu.gbl": "78e5f2af457a99dc39993e1195214596246e34f1ebd9f1c58a7180cd516a4d26",
+    "MiniConsoleCarrier-B_Mask.gbs": "b993ed3d331b368d88c9e8440875c2ab6a0f5fa33d0ae472d452db14a4f65541",
+    "MiniConsoleCarrier-B_Silkscreen.gbo": "31656763dab4c0652d9137184ff6d9589cc037645463e11f0e797d7f841d2014",
+    "MiniConsoleCarrier-Edge_Cuts.gm1": "7741c388817ded6b2dffa8e171bfdc21f8f65b87fa505e81128148466eb3db3f",
+    "MiniConsoleCarrier-F_Cu.gtl": "6a46ea4591410cb615c7327e5c0ecfe5e1f3d43a1e34f9f7f752d847839e8bf9",
+    "MiniConsoleCarrier-F_Mask.gts": "10f87fa809d0744406347b4873b1d2017fff85120e97b08a8ff8fc173432587c",
+    "MiniConsoleCarrier-F_Silkscreen.gto": "4cc303c985e3557bef3fb82581c742de03d1ab3a3e674139b0c4438210af3209",
+    "MiniConsoleCarrier-NPTH.drl": "08fc35ad5c31db355cf0a566aa186a0ac2e6b094cdea5c7be33c9bdc29ebbaf2",
+    "MiniConsoleCarrier-PTH.drl": "4fcbd608cd9fec7c36719771e1e77d29b0dd0cb3a6f8c6404ce2845366222aad"
+  }
+}

@@ -1,0 +1,282 @@
+{
+  "variant": "TFT114",
+  "revision": "1.3",
+  "date": "2026-10-14",
+  "coordinate_check_tolerance_mm": 1e-05,
+  "carrier_mm": [
+    70.1,
+    30.1,
+    1.6
+  ],
+  "TFT_module": "MSP1141 / ST7789",
+  "TFT_envelope_mm": [
+    19.3,
+    1.05,
+    31.4,
+    28.0
+  ],
+  "TFT_header_GND_mm": [
+    26.11,
+    2.49
+  ],
+  "TFT_header_order": [
+    "GND",
+    "VCC",
+    "SCL",
+    "SDA",
+    "RES",
+    "DC",
+    "CS",
+    "BLK"
+  ],
+  "TFT_mounts_mm": [
+    [
+      21.8,
+      3.55
+    ],
+    [
+      48.2,
+      3.55
+    ],
+    [
+      48.2,
+      26.55
+    ]
+  ],
+  "unused_TFT_mount_mm": [
+    [
+      21.8,
+      26.55
+    ]
+  ],
+  "TFT_stand_off_mm": 4.0,
+  "TFT_max_underside_components_mm": 1.0,
+  "TFT_gap_to_nearest_button_body_mm": 1.12,
+  "TFT_top_bottom_edge_gap_mm": [
+    1.05,
+    1.05
+  ],
+  "S3_center_mm": [
+    13.3484,
+    18.64
+  ],
+  "S3_USB_direction": "bottom",
+  "USB_envelope_face_y_mm": 31.59,
+  "up_down_collinear": true,
+  "left_right_symmetric": true,
+  "B_above_A_on_left": true,
+  "R1_center_mm": [
+    12.0,
+    14.95
+  ],
+  "R1_type": "220 ohm 1/4 W axial film, 7.62mm pitch",
+  "GPIOs": {
+    "A": 7,
+    "B": 2,
+    "UP": 10,
+    "RIGHT": 11,
+    "LEFT": 12,
+    "DOWN": 13,
+    "TFT_SCK": 8,
+    "TFT_MOSI": 9,
+    "TFT_RST": 1,
+    "TFT_DC": 6,
+    "TFT_CS": -1,
+    "TFT_BL": 43,
+    "BUZZER_GPIO4": 4,
+    "IIC_SCL": 44,
+    "IIC_SDA": 5
+  },
+  "plated_component_holes": 65,
+  "plated_vias": 34,
+  "nonplated_mount_holes": 7,
+  "smd_lands": 15,
+  "PTH_mask_openings": "both sides verified",
+  "SMD_mask_and_paste": "front verified",
+  "original_OLED_source_preserved": false,
+  "generic_module_physical_fit": "not yet verified; supplier width discrepancy documented",
+  "firmware": "Existing OLED firmware unchanged; TFT port required",
+  "drc_violations": 0,
+  "unconnected_items": 0,
+  "schematic_parity_issues": 0,
+  "erc_violations": 0,
+  "kicad": "10.0.1",
+  "OLED_revision_note": "Both PCB variants intentionally updated to the user DXF case mounting pattern; electrical artwork checked separately.",
+  "case_mount_centers_mm": [
+    [
+      2.1,
+      2.0
+    ],
+    [
+      2.1,
+      28.1
+    ],
+    [
+      68.0,
+      2.0
+    ],
+    [
+      68.0,
+      28.1
+    ]
+  ],
+  "case_mount_spacing_mm": [
+    65.9,
+    26.1
+  ],
+  "case_mount_NPTH_diameter_mm": 2.2,
+  "case_mount_source": {
+    "file": "MountingHole.dxf",
+    "sha256": "baca7b2a5c13c18a80f854257a7385c1f9426d668a42edbc14af5a3a22860683",
+    "units": "mm",
+    "spacing_mm": [
+      65.9,
+      26.1
+    ],
+    "coordinate_map": {
+      "pcb_x": "DXF x + 38.05000",
+      "pcb_y": "10.05000 - DXF y"
+    },
+    "registration": "Existing D-pad Up/Down centreline; corroborated by display horizontal centre and case centre.",
+    "DXF_hole_diameter_mm": 2.0,
+    "DXF_boss_diameter_mm": 4.0,
+    "carrier_clearance_hole_mm": 2.2,
+    "note": "Only four case holes move. Retain 70.1 x 30.1 outline, display mounts, controls and USB placement."
+  },
+  "case_mount_min_drill_to_board_edge_mm": 0.9,
+  "existing_component_positions_unchanged": false,
+  "existing_pad_geometry_unchanged": true,
+  "existing_routes_preserved_except_TFT_CS": false,
+  "tracks_and_vias_unchanged": false,
+  "outline_and_display_mounts_unchanged": true,
+  "BOM_unchanged": false,
+  "NPTH_Excellon_checked_against_DXF": true,
+  "EAGLE_case_mounts_checked": true,
+  "testpads": [
+    {
+      "reference": "TP1",
+      "label": "GND",
+      "net": "GND",
+      "center_mm": [
+        65.8,
+        6.5
+      ],
+      "diameter_mm": 1.5,
+      "side": "rear",
+      "paste": false
+    },
+    {
+      "reference": "TP2",
+      "label": "3V3",
+      "net": "+3V3",
+      "center_mm": [
+        65.8,
+        10.5
+      ],
+      "diameter_mm": 1.5,
+      "side": "rear",
+      "paste": false
+    },
+    {
+      "reference": "TP3",
+      "label": "BAT",
+      "net": "BAT_SW",
+      "center_mm": [
+        65.8,
+        14.5
+      ],
+      "diameter_mm": 1.5,
+      "side": "rear",
+      "paste": false
+    },
+    {
+      "reference": "TP4",
+      "label": "SCL",
+      "net": "IIC_SCL",
+      "center_mm": [
+        65.8,
+        18.5
+      ],
+      "diameter_mm": 1.5,
+      "side": "rear",
+      "paste": false
+    },
+    {
+      "reference": "TP5",
+      "label": "SDA",
+      "net": "IIC_SDA",
+      "center_mm": [
+        65.8,
+        22.5
+      ],
+      "diameter_mm": 1.5,
+      "side": "rear",
+      "paste": false
+    }
+  ],
+  "dpad_adjustment": {
+    "inward_per_side_mm": 0.5,
+    "center_distance_mm": 6.62,
+    "nominal_button_body_gap_mm": 0.62,
+    "case_note": "Move case LEFT and RIGHT openings 0.50 mm inward; Up/Down and mounting holes are unchanged."
+  },
+  "unrelated_component_positions_unchanged": true,
+  "unrelated_routes_preserved": true,
+  "dpad_horizontal_half_spacing_mm": 3.31,
+  "iic": {
+    "reference": "J5",
+    "header": "1x04 2.54mm through-hole, front mount",
+    "position": "Top edge above UP",
+    "x": [
+      54.32,
+      56.86,
+      59.4,
+      61.94
+    ],
+    "y": 1.55,
+    "front_left_to_right": [
+      "GND",
+      "VCC",
+      "SCL",
+      "SDA"
+    ],
+    "vcc_V": 3.3,
+    "gpio": {
+      "SCL": 44,
+      "SDA": 5
+    },
+    "net_order": [
+      "GND",
+      "+3V3",
+      "IIC_SCL",
+      "IIC_SDA"
+    ],
+    "pullups": "R2/R3 4.7k to 3V3 fitted",
+    "body_envelope_mm": [
+      53.05,
+      0.28,
+      10.16,
+      2.54
+    ],
+    "pad_mm": [
+      1.8,
+      1.8
+    ],
+    "drill_mm": 1.0,
+    "ground_stitch_via_mm": [
+      14.0,
+      17.0
+    ]
+  },
+  "gerber_sha256": {
+    "MiniConsoleTFT114-B_Cu.gbl": "c6a4287950ff82e04a8fda0b1dabcc8e889125a4c399e4b36076de97f01f2ab1",
+    "MiniConsoleTFT114-B_Mask.gbs": "cd1e58dd65406b374da43d3966f8e716493bc01e09739dc07049e2567a1ee171",
+    "MiniConsoleTFT114-B_Silkscreen.gbo": "7faa56daf571ed88d7ab16e921b4a191ede6df4b0eceb7467474cd64e4a40458",
+    "MiniConsoleTFT114-Edge_Cuts.gm1": "75246a3db68ac4e55a63f210c70e5c713585bda26c2eb299b53b07b6b31f1752",
+    "MiniConsoleTFT114-F_Cu.gtl": "7696fb02ba5cca836435618eae828d676dbbbd0846795ea7c105f07aabe694e3",
+    "MiniConsoleTFT114-F_Mask.gts": "b2dc7e8070a695cad7f1a56b22020f5ec757488ad65dfebb03b97b47e08aab65",
+    "MiniConsoleTFT114-F_Silkscreen.gto": "c516724db0fa7a7554f2d1df43d4782fd1e2fe0b79f833ecc6b3a643f3c604fb",
+    "MiniConsoleTFT114-NPTH.drl": "5b86a2aca6bdea4342065b9294a45ef508e6d4c5a5092226ae4aeacde12b6127",
+    "MiniConsoleTFT114-PTH.drl": "c32a5fbeb6ce68949935aab52e8b3e88aba61394a333fafa10be5dc74bee27ff"
+  }
+}

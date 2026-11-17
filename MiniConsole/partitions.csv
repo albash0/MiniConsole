@@ -1,0 +1,6 @@
+# Preserve the existing NVS and OTA metadata locations.
+nvs,data,nvs,0x9000,0x5000,
+otadata,data,ota,0xe000,0x2000,
+factory,app,factory,0x10000,0x1d0000,
+wad,data,0x40,0x1e0000,0x200000,
+saves,data,0x41,0x3e0000,0x20000,

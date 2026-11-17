@@ -1,0 +1,17 @@
+name: Host tests
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        display: [oled, tft]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Sanitized host tests
+        env:
+          CXX: clang++
+          DISPLAY_PROFILE: ${{ matrix.display }}
+        run: sh MiniConsole/tests/run_tests.sh

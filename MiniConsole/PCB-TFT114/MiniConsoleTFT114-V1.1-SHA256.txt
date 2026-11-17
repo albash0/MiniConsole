@@ -1,0 +1,2 @@
+71e72df6fe2f671f3751fac40cc2b94a7468c54c7205d00442fe140af44e6630  MiniConsoleTFT114-V1.1-Gerbers.zip
+dab4badebddfbad55d246d57af4e7a379792dbb5fedf3c0650dff4bc4b3556cf  MiniConsoleTFT114-V1.1-Design.zip

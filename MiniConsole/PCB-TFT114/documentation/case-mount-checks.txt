@@ -1,0 +1,13 @@
+2026-10-14 / MiniConsoleTFT114-V1.3
+DXF axis spacing: 65.90 x 26.10 mm; PCB: 70.10 x 30.10 mm.
+H1 (68.00,28.10), H2 (2.10,28.10), H3 (68.00,2.00), H4 (2.10,2.00) mm.
+All four case holes: 2.20 mm NPTH M2 clearance. Minimum edge ligament: 0.90 mm.
+DXF / native PCB / fabrication Excellon / EAGLE mount positions match.
+Case holes, display holes, modules, USB position and board edges match the baseline.
+Left/Right buttons each moved 0.50 mm inward, retaining symmetry.
+TP1-TP5: 1.50 mm rear copper/mask-only probe pads, no paste or drill.
+J5 expansion, TFT pull-ups/CS configuration and local rerouting checked separately.
+DRC / unconnected / schematic parity / ERC: zero.
+Fit PDF: all three pages visually reviewed; both page-1 board outlines measured at 1:1.
+Updated front/rear renders and schematic PDF visually reviewed.
+Gerber ZIP: seven layers plus separate PTH / NPTH drills; all nine hashes verified.

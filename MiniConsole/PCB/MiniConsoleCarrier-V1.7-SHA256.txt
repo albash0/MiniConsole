@@ -1,0 +1,2 @@
+f10370919f2ab730ac890c567c85e281b97497d29596c4520f75f37c2c1d1e63  MiniConsoleCarrier-V1.7-Gerbers.zip
+fb1ad48792e614a72e3f9adf222e00effd54220c69adda41fc51eee8dd2ceeb3  MiniConsoleCarrier-V1.7-Design.zip

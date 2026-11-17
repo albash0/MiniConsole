@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name "MiniConsole")(type "KiCad")(uri "${KIPRJMOD}/MiniConsole.pretty")(options "")(descr "Console carrier footprints"))
+)

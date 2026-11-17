@@ -1,0 +1,69 @@
+(footprint "Wire_2x_2.54_Reverse"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(property "Reference" "J4"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "46c614d6-5c2c-40b3-a253-79b81f993589")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Value" "External piezo (optional)"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "bfacc990-1069-49ec-a0af-feca48bde343")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "309f4dc0-90fb-46a4-9cd3-6c8262e27f54")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "d3cab1c5-c5d0-485e-ad2c-8e863ae19086")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr through_hole dnp)
+	(duplicate_pad_numbers_are_jumpers no)
+	(pad "1" thru_hole circle
+		(at 0 0)
+		(size 1.8 1.8)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "aaafd2e7-1566-4d62-94cd-1f7b8c0164e0")
+	)
+	(pad "2" thru_hole circle
+		(at -2.54 0)
+		(size 1.8 1.8)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "745e1e6a-d710-45cc-9147-c0a6d5b5e81e")
+	)
+	(embedded_fonts no)
+)

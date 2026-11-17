@@ -1,0 +1,16 @@
+Reference,Quantity,Part,Package / dimensions,Location,Population,Notes
+U1,1,ESP32-S3 SuperMini module,"2 x 9 headers, 2.54mm pitch, 15.24mm rows",Rear,Fit,Reuse actual generic S3; USB toward lower edge
+U1 headers,2,1x09 male 2.54mm header,Low-profile direct solder,Rear,Fit,Female sockets optional only if enclosure height permits
+J1,1,1x04 OLED header,2.54mm pitch,Front,Fit,"OLED rotated 180 degrees: header TOP, front left-to-right GND VCC SCL SDA"
+SW1-SW6,6,6x6mm momentary tactile pushbutton,6.5 x 4.5mm terminal centers,Front,Fit,Match existing height; LEFT/RIGHT footprints rotated 90 degrees
+SW7,1,SS12D00 SPDT slide switch,"3 terminals, 2.5mm pitch",Front edge,Fit,"Left upper edge, rotated 180 degrees; case-supported BAT+ disconnect"
+C1,1,100nF X7R capacitor >=6.3V,0603 / 1608 metric,Front under OLED,Fit,Local OLED decoupling
+R1,1,220 ohm 1/4 W carbon-film or metal-film resistor,"Axial DIN0207, 6.3 x 2.5mm body, 7.62mm lead pitch",Front under OLED,DNP,Fit for B1 or J4; mount flat; 0.8mm drills; body diameter <=2.5mm
+B1,1,"9018 passive SMD piezo, AliExpress option 9018; PUI SMT-0940-T-3V-R alternative retained",9018: 9 x 9 x 1.8mm; two 1.0 x 3.2mm terminals; fits existing 1.6 x 3.8mm pads,Front under OLED,DNP,"Optional sound: select 9018 (10pcs), Axtaike; Choice/free shipping observed 2026-10-14; retain R1 220 ohm axial film; >=3mm free underside gap; https://www.aliexpress.us/item/3256807997653622.html"
+J4,1,External passive piezo wire pair,"Two solderable through holes, 2.54mm",Front/rear wires,DNP,Alternative to B1; R1 required; choose one piezo
+J2/J3 wires,4,"Insulated flexible wire, roughly 26-28AWG",Solder to through-hole pads,As routed,Fit,J2 battery +/-; J3 S3 B+/B- pigtails
+Battery,1,Existing single-cell 804030 LiPo,40 x 30 x 8mm nominal,Behind D-pad / front right,Fit,Reuse existing cell/module charger; insulating spacer
+H1-H8,8,M2 clearance locations,2.2mm NPTH,Mechanical,As needed,Carrier and OLED mounting hardware matched to case
+Carrier,1,MiniConsoleCarrier V1.7 PCB,"70.1 x 30.1mm, 1.6mm, 2 layers",-,Fit,1oz copper; two-sided solder mask; HASL or ENIG
+J5,1,1x04 2.54mm IIC expansion header,1.0mm drills / 1.8mm pads,"Front, top edge above UP",Fit,Left to right GND / VCC=3V3 / SCL / SDA
+TP1-TP5,5,Bare copper probe pads,1.5mm round; rear mask openings; no drill/paste,Rear edge beside D-pad,PCB only,GND / 3V3 / switched BAT+ / SCL / SDA; no parts to buy

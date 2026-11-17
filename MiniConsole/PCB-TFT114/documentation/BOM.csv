@@ -1,0 +1,21 @@
+Reference,Quantity,Part,Package / dimensions,Location,Population,Notes
+U1,1,ESP32-S3 SuperMini module,2 x 9 headers; 2.54mm pitch; 15.24mm row gap,Rear,Fit,Same researched S3 footprint and bottom USB position as OLED V1.4
+U1 headers,2,1x09 straight male header,2.54mm pitch; direct solder,Rear,Fit,Keep >=2mm module underside gap; clip opposing switch tails below 1mm
+Display,1,LCDWIKI / QDtech MSP1141 1.14-inch IPS TFT,ST7789V; 135x240; drawing 31.4 x 28.0mm,Front,Fit,Choose 1.14inch from the specified AliExpress listing; batch fit-check required
+J1,1,1x08 straight male display header,2.54mm pitch; 1.0mm carrier drills,Front,Fit,Header TOP; left to right GND VCC SCL SDA RES DC CS BLK; 3.3V only
+SW1-SW6,6,6x6mm momentary tactile pushbutton,6.5 x 4.5mm terminal centers,Front,Fit,"Reuse actual button height; D-pad RIGHT, B upper-left and A lower-left"
+SW7,1,SS12D00 SPDT slide switch,Three electrical terminals; 2.5mm pitch,Left upper edge,Fit,Case supports original switch overhang; disconnects battery positive
+C1,1,100nF X7R capacitor >=6.3V,0603 / 1608 metric,Front under TFT,Fit,Local 3.3V decoupling near display header
+C2,1,4.7uF X5R/X7R ceramic capacitor >=10V,0805 / 2012 metric,Front under TFT,Fit,Local display supply bulk decoupling
+R1,1,220 ohm 1/4 W carbon-film or metal-film resistor,DIN0207; 6.3 x 2.5mm body; 7.62mm pitch; 0.8mm drills,Front between A/B,DNP,Mount flat; fit for B1 or external J4 piezo
+B1,1,"9018 passive SMD piezo, AliExpress option 9018; PUI SMT-0940-T-3V-R alternative retained",9018: 9 x 9 x 1.8mm; two 1.0 x 3.2mm terminals; fits existing 1.6 x 3.8mm pads,Front under TFT,DNP,"Optional sound: select 9018 (10pcs), Axtaike; Choice/free shipping observed 2026-10-14; retain R1 220 ohm axial film; >=3mm free underside gap; https://www.aliexpress.us/item/3256807997653622.html"
+J4,1,External passive piezo wire pair,Two solder holes; 2.54mm pitch,Front/rear wires,DNP,Alternative to B1; retain R1; choose one transducer
+J2/J3 wires,4,Flexible insulated wire ~26-28AWG,Solder to 1.0mm holes,Rear / battery,Fit,Battery +/- to J2; J3 pigtails to S3 underside B+/B-
+Battery,1,Existing 804030 single-cell LiPo,40 x 30 x 8mm nominal,Rear behind D-pad,Fit,Reuse existing charger; retain insulating spacer; no solder tails against pouch
+H1-H4,4,Carrier M2 clearance locations,2.2mm NPTH; existing case pattern,Mechanical,As needed,Same carrier mounting pattern as OLED version
+H5-H7,3,TFT mount screws/spacers,2.2mm carrier holes; module holes 2.0mm; 4mm spacing,Mechanical,Fit,M1.6 screws give clearance through the module; only top-left/top-right/bottom-right mounts
+Unused TFT hole,0,Lower-left display mounting hole,NO carrier drill and NO screw,TFT only,Do not fit,Would collide with S3 header GND pad; display uses other three mounts plus header
+Carrier,1,MiniConsoleTFT114 V1.3 PCB,70.1 x 30.1mm; 1.6mm FR4; 2 layers,Carrier,Fit,1oz copper; solder mask both sides; hand-solderable finish
+J5,1,1x04 2.54mm IIC expansion header,1.0mm drills / 1.8mm pads,"Front, top edge above UP",Fit,Left to right GND / VCC=3V3 / SCL / SDA
+R2/R3,2,4.7k ohm pull-up resistor,0603,Front under TFT,Fit,IIC SCL/SDA pull-ups to 3V3; J1 CS tied GND to free GPIO5
+TP1-TP5,5,Bare copper probe pads,1.5mm round; rear mask openings; no drill/paste,Rear edge beside D-pad,PCB only,GND / 3V3 / switched BAT+ / SCL / SDA; no parts to buy

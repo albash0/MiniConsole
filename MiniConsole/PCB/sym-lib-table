@@ -1,0 +1,3 @@
+(sym_lib_table
+ (lib (name "MiniConsole")(type "KiCad")(uri "${KIPRJMOD}/MiniConsole.kicad_sym")(options "")(descr "Console symbols"))
+)

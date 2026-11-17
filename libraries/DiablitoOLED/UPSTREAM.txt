@@ -1,0 +1,4 @@
+DIABLITO https://github.com/aedile/DIABLITO
+Commit 8602f28e31e9c35c7b6198f5235543cea9a53588
+Based on kilograham/rp2040-doom and Chocolate Doom, GPL-2.0-or-later.
+Local port: S3 short-pointer base, SSD1306 renderer, six buttons, silent audio, launcher integration.

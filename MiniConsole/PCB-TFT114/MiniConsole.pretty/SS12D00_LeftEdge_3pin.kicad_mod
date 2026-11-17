@@ -1,0 +1,117 @@
+(footprint "SS12D00_LeftEdge_3pin"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(property "Reference" "SW7"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "ab099693-6f33-4ce0-847d-1b375600b1dd")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Value" "BATTERY ON/OFF SS12D00"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "91a12306-9a69-42ba-8c12-a0284d46c89d")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b88d6657-ccfb-49e1-a50a-f9efa77ef421")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "22cb74b4-bf44-4594-81ec-7de3b59d8cee")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr through_hole)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -9.42 -4.2)
+		(end -1.8 -4.2)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "23f87e36-8e25-422c-8d98-4007d32b9c1e")
+	)
+	(fp_line
+		(start -9.42 4.2)
+		(end -9.42 -4.2)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "71c0bee6-cde9-4d11-bf6e-0cb0ee225b20")
+	)
+	(fp_line
+		(start -1.8 -4.2)
+		(end -1.8 4.2)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "51ab5409-00aa-449d-9cf8-a1595154c437")
+	)
+	(fp_line
+		(start -1.8 4.2)
+		(end -9.42 4.2)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "095f7d4b-7f08-420c-9e12-42136bd2a5d7")
+	)
+	(pad "1" thru_hole circle
+		(at 0 2.5)
+		(size 1.7 1.7)
+		(drill 0.9)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "47b0aa93-7bb1-4bd4-8215-63a6338117a1")
+	)
+	(pad "2" thru_hole circle
+		(at 0 0)
+		(size 1.7 1.7)
+		(drill 0.9)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "6d44c2a6-c1a9-4598-a3b2-38f8faabdc5e")
+	)
+	(pad "3" thru_hole circle
+		(at 0 -2.5)
+		(size 1.7 1.7)
+		(drill 0.9)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "848c6f7b-83ae-4842-abb1-045d098857a1")
+	)
+	(embedded_fonts no)
+)
