@@ -1,10 +1,57 @@
 # MiniConsole
 
-A pocket ESP32-S3 game console with six buttons, an OLED or color TFT screen, and a growing library of games. Made by [albash0](https://github.com/albash0).
+**A pocket game console built across embedded software, custom electronics, and physical design.**
+
+[![Host tests](https://github.com/albash0/MiniConsole/actions/workflows/host-tests.yml/badge.svg)](https://github.com/albash0/MiniConsole/actions/workflows/host-tests.yml)
+
+| Snake | Micro Motorways | Pocket Partners |
+| --- | --- | --- |
+| ![Native TFT Snake renderer](docs/media/snake.png) | ![Micro Motorways traffic simulation](docs/media/motorways.png) | ![Pocket Partners co-op room](docs/media/partners.png) |
+
+*Host-rendered frames from the firmware's TFT renderer. These are software previews, not photographs of assembled devices.*
+
+An ESP32-S3 handheld with six buttons, OLED and color TFT versions, custom carrier PCBs, and a printable enclosure. The library combines arcade games, puzzles, an original traffic-planning implementation, adapted Doom support, and wireless play between two consoles.
+
+A project by [albash0](https://github.com/albash0), a first-year ASEN and CTD student at CU Boulder.
+
+[Engineering notes](docs/ENGINEERING.md) · [Hardware and case files](#hardware) · [Build instructions](docs/BUILD.md) · [Controls](docs/USER_GUIDE.md) · [Validation](VALIDATION.md)
 
 ## About the project
 
-MiniConsole started with Snake and portrait Tetris on a 128×64 OLED. It grew into a handheld with arcade games, puzzles, an adapted Doom engine, an original traffic-planning game, and wireless play between two consoles. This repository contains the firmware, the complete local DIABLITO adaptation, host tests, custom carrier PCBs, and printable plain-back case parts.
+MiniConsole began with Snake and portrait Tetris on a 128 × 64 OLED. Extending it to a 240 × 135 color display introduced new memory, rendering, input, and mechanical-fit constraints. Wireless co-op added a second device whose state had to remain consistent with the first.
+
+### My project work
+
+| Area | Work in this project | Source and evidence |
+| --- | --- | --- |
+| Firmware and interaction | Game launcher, six-button navigation, display profiles, themes, sound, and persistent checkpoints | [Main firmware](MiniConsole/MiniConsole.ino), [checkpoint implementation](MiniConsole/SuspendSave.h), [user guide](docs/USER_GUIDE.md) |
+| Games and networking | Micro Motorways traffic simulation; Pocket Partners rooms and host-authoritative co-op; Block Battle Tetris mode | [Traffic model](MiniConsole/MotorwaysGame.h), [co-op implementation](MiniConsole/PartnersLink.h), [protocol tests](MiniConsole/tests/partners_test.cpp) |
+| Hardware integration | OLED and TFT carrier-board designs, component/pin mapping, and fabrication outputs | [OLED carrier](MiniConsole/PCB/), [TFT carrier](MiniConsole/PCB-TFT114/) |
+| Mechanical design | Screen/PCB fit, keyed button guides, and printable plain rear-shell choices | [STEP/STL parts and assembly constraints](hardware/case/) |
+| Validation and tooling | Automated game/controller/rendering tests, firmware builds, and documented hardware bring-up | [Test runner](MiniConsole/tests/run_tests.sh), [validation report](VALIDATION.md) |
+
+**Upstream work:** Doom support adapts DIABLITO, descended from RP2040 Doom and Chocolate Doom. The original game engine and assets have their own authors and licenses. My project integrates that engine with the S3, displays, controls, launcher, and saves. The complete adapted source is included under [DiablitoOLED](libraries/DiablitoOLED/); see [credits and licenses](THIRD_PARTY.md).
+
+### Engineering decisions
+
+- **Share game rules across displays:** keep common state and checkpoint formats while allowing native color rendering where it improves the interface.
+- **Budget memory explicitly:** a single full-panel RGB565 buffer is 64,800 bytes; the TFT backend attempts PSRAM allocation first.
+- **Use one authority for co-op physics:** the host owns the world state; clients send inputs and receive snapshots, with stalls and disconnects handled explicitly.
+- **Treat fit as part of the system:** screen height, switch travel, retaining flanges, and battery clearance constrain the enclosure together.
+
+[Read the decisions, source links, regression example, and next measurements →](docs/ENGINEERING.md)
+
+### Status and validation
+
+| Check | Evidence and limits |
+| --- | --- |
+| Automated tests | **30 host suites per display profile** pass with address/undefined-behavior sanitizers. [GitHub Actions](https://github.com/albash0/MiniConsole/actions). |
+| Firmware | OLED and TFT profiles compiled for the public source release. |
+| Physical devices | Development records document OLED/TFT bring-up and nearby two-console co-op/battle testing. The source release itself did not include a new device flash or gameplay run. |
+| CAD and fabrication | Editable KiCad designs, BOMs, fabrication files, and individual case parts are supplied. Physical assembly tolerances still need checking. |
+| Open measurements | Battery runtime, defined wireless range, and repeatable frame-time comparisons remain to be measured. |
+
+Host tests stub the Doom engine; their success does not establish Doom runtime behavior on hardware. [Validation details](VALIDATION.md).
 
 ### Timeline
 
@@ -24,65 +71,34 @@ Dates below come from dated validation notes and source/CAD records; early dates
 | 2026-11-12 | Wireless Tetris Block Battle and ten-room Pocket Partners co-op, tested on two TFT consoles. |
 | 2026-11-17 | Public source preparation, portable build instructions and privacy review. |
 
-## Games and features
 
-- **Snake:** animated body, configurable walls/speed and persistent high score.
-- **Tetris:** portrait play, textured pieces, next-piece preview, ghost, line-clear animations and classic scoring.
-- **Breakout** and **Invaders:** arcade games with successive levels/waves.
-- **Sokoban:** ten original puzzles with undo and saved unlocks.
-- **Doom:** the real shareware engine, adapted from DIABLITO with six-button controls and separate native saves.
-- **Micro Motorways:** an original traffic-planning game with bridges, express links, persistent cities and endless destination replacement.
-- **Block Battle:** two-console Tetris with matching bags, garbage attacks and rematches.
-- **Pocket Partners:** ten original cooperative platform-puzzle rooms, shared keys, crates and pressure plates.
-- **Going Out:** drink counter/goal, Reaction Duel, High or Low and Pass the Bomb.
+## Games and controls
 
-Settings, themes, sound, music, high scores and checkpoints survive restarts. Wireless modes use ESP-NOW without a router. [Controls and hardware](docs/USER_GUIDE.md) explain the details.
+The main library includes **Snake, Tetris, Breakout, Invaders, Sokoban, Doom, Micro Motorways, and Pocket Partners**. Tetris also has a two-console Block Battle mode. Pocket Partners has ten cooperative platform-puzzle rooms, and Sokoban has ten original puzzles.
 
-## Build and install
-
-Requires Python 3, Arduino CLI, ESP32 Arduino core **3.3.8**, and the display dependencies. From this repository's root:
-
-```sh
-arduino-cli core update-index --additional-urls https://espressif.github.io/arduino-esp32/package_esp32_index.json
-arduino-cli core install esp32:esp32@3.3.8 --additional-urls https://espressif.github.io/arduino-esp32/package_esp32_index.json
-arduino-cli lib install "Adafruit SSD1306" "Adafruit ST7735 and ST7789 Library"
-python3 -m pip install esptool
-python3 MiniConsole/tools/build_doom.py --display oled
-python3 MiniConsole/tools/build_doom.py --display tft
-```
-
-The repository vendors Adafruit GFX/BusIO for the host tests and the **full adapted DIABLITO library** under `libraries/DiablitoOLED`; the builder explicitly uses these local libraries. `ARDUINO_CLI` and `ESPTOOL` can override executable locations. The Arduino IDE's bundled CLI is detected on macOS when a CLI is not on PATH.
-
-For a first installation, Doom also needs its separate compressed shareware game data. The source repository does not bundle copyrighted game assets. `--fetch-assets` downloads the upstream asset at a pinned commit and checks its length and SHA-256 **before** writing it. The asset retains its upstream shareware terms. Review [third-party notices](THIRD_PARTY.md).
-
-```sh
-# Replace PORT with the serial port reported by arduino-cli board list.
-python3 MiniConsole/tools/build_doom.py --display tft --port PORT --assets --fetch-assets
-# Later updates only need the application:
-python3 MiniConsole/tools/build_doom.py --display tft --port PORT
-```
-
-You can provide the exact supported asset using `--asset-file PATH` instead of downloading it. Board settings: ESP32S3 Dev Module, 4 MB DIO flash, USB hardware CDC, **QSPI PSRAM enabled**. The custom partition table preserves NVS and assigns separate Doom-data and native-save partitions. Back up your device before changing its partition layout.
+The TFT version adds native menus, selected native game renderers, themes, and color. Checkpoints, settings, and high scores persist across restarts. Wireless modes use ESP-NOW without a router. Optional Going Out mode includes a drink counter and three party games; it is documented with the [full controls](docs/USER_GUIDE.md).
 
 ## Hardware
 
-| Item | Files |
+| Version or part | Files |
 | --- | --- |
-| OLED carrier V1.7 | [KiCad project, Gerbers and BOM](MiniConsole/PCB/) |
-| 1.14-inch ST7789 TFT carrier V1.3 | [KiCad project, Gerbers and BOM](MiniConsole/PCB-TFT114/) |
-| Keyed TFT case with plain rear choices | [Individual STEP/STL parts and assembly notes](hardware/case/) |
+| OLED carrier V1.7 | [KiCad, Gerbers, BOM and board notes](MiniConsole/PCB/) |
+| 1.14-inch ST7789 TFT carrier V1.3 | [KiCad, Gerbers, BOM and board notes](MiniConsole/PCB-TFT114/) |
+| Keyed TFT enclosure | [Individual STEP/STL fronts, plain rears and buttons](hardware/case/) |
 
-The boards use an ESP32-S3 SuperMini, six grounded buttons with internal pull-ups, and an optional GPIO4 piezo through 220 Ω. The TFT screen is 135×240, displayed in landscape. Read the [battery wiring correction](MiniConsole/PCB-TFT114/wiring/README.md) before assembling that carrier. Native KiCad files and unpacked fabrication outputs are supplied; hardware illustrations are nominal references.
+Both carriers use an ESP32-S3 SuperMini, six buttons, and an optional GPIO4 piezo through 220 Ω. Read the [TFT battery wiring correction](MiniConsole/PCB-TFT114/wiring/README.md) before assembly. The enclosure notes cover the thicker rear's battery-clearance constraint.
 
-## Test
+## Build and test
 
-A C++17 compiler with AddressSanitizer and UndefinedBehaviorSanitizer is required. Host tests exercise game rules, saves, actual Adafruit GFX rendering, menus, music, radio packet codecs and co-op room solutions. They stub the Doom engine; a host pass does not validate Doom runtime or radio range on hardware.
+[The build guide](docs/BUILD.md) covers dependencies, OLED/TFT selection, first installation, and the separate Doom shareware-data download. Commands below run from the repository root:
 
 ```sh
+python3 MiniConsole/tools/build_doom.py --display oled
+python3 MiniConsole/tools/build_doom.py --display tft
 sh MiniConsole/tests/run_tests.sh
 DISPLAY_PROFILE=tft sh MiniConsole/tests/run_tests.sh
 ```
 
 ## License and credits
 
-Original software, documentation and design files are released under **GPL-2.0-or-later**, except where a retained file notice states otherwise. See [LICENSE](LICENSE) and [THIRD_PARTY.md](THIRD_PARTY.md). DIABLITO, RP2040 Doom, Chocolate Doom and id Software retain their respective credits and licenses. Bundled Adafruit and KiCad library material retains its own license. Doom game data is licensed separately from source code.
+Original software, documentation and design files: **GPL-2.0-or-later**, except retained third-party notices. See [LICENSE](LICENSE) and [THIRD_PARTY.md](THIRD_PARTY.md). DIABLITO, RP2040 Doom, Chocolate Doom, id Software, Adafruit and KiCad contributors retain their credits and licenses. Doom game data is licensed separately.
