@@ -9,3 +9,5 @@ DISPLAY_PROFILE=tft sh MiniConsole/tests/run_tests.sh /tmp/miniconsole-previews
 ```
 
 The PNG copies retain pixel data and structural image chunks only.
+
+Physical build photographs are under [`photos/`](photos/). Their provenance and metadata handling are documented separately from these renderer fixtures.

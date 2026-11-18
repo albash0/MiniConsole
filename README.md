@@ -4,11 +4,9 @@
 
 [![Host tests](https://github.com/albash0/MiniConsole/actions/workflows/host-tests.yml/badge.svg)](https://github.com/albash0/MiniConsole/actions/workflows/host-tests.yml)
 
-| Snake | Micro Motorways | Pocket Partners |
-| --- | --- | --- |
-| ![Native TFT Snake renderer](docs/media/snake.png) | ![Micro Motorways traffic simulation](docs/media/motorways.png) | ![Pocket Partners co-op room](docs/media/partners.png) |
+<img src="docs/media/photos/finished-oled-and-tft-top.jpg" alt="Two assembled MiniConsole generations: the OLED version above and the color TFT version below, both displaying their game libraries" width="720">
 
-*Host-rendered frames from the firmware's TFT renderer. These are software previews, not photographs of assembled devices.*
+*Built hardware: the earlier OLED handheld above and the color TFT handheld below. Photograph provided by the project author.*
 
 An ESP32-S3 handheld with six buttons, OLED and color TFT versions, custom carrier PCBs, and a printable enclosure. The library combines arcade games, puzzles, an original traffic-planning implementation, adapted Doom support, and wireless play between two consoles.
 
@@ -19,6 +17,15 @@ A project by [albash0](https://github.com/albash0), a first-year ASEN and CTD st
 ## About the project
 
 MiniConsole began with Snake and portrait Tetris on a 128 × 64 OLED. Extending it to a 240 × 135 color display introduced new memory, rendering, input, and mechanical-fit constraints. Wireless co-op added a second device whose state had to remain consistent with the first.
+
+### From prototype to finished handheld
+
+| Electronics iteration | Enclosure fit test | Assembled generations |
+| --- | --- | --- |
+| <img src="docs/media/photos/oled-protoboard-to-tft-pcb.jpg" alt="Earlier OLED protoboard assembly above a custom color TFT carrier PCB" width="250"> | <img src="docs/media/photos/tft-enclosure-fit-test.jpg" alt="White TFT enclosure held in one hand during a screen and button fit test" width="250"> | <img src="docs/media/photos/finished-oled-and-tft-angle.jpg" alt="Angled view of the assembled color TFT handheld in front of the earlier OLED handheld" width="250"> |
+| OLED protoboard prototype at the top; custom TFT PCB below. | A printed front shell brings together the display opening, button guides, fasteners, and handheld form. | Color TFT version in front; earlier OLED version behind. |
+
+These build photographs show the progression from electronics integration to enclosure fitting and assembled devices. [Photo provenance and metadata handling](docs/media/photos/README.md).
 
 ### My project work
 
@@ -47,7 +54,7 @@ MiniConsole began with Snake and portrait Tetris on a 128 × 64 OLED. Extending 
 | --- | --- |
 | Automated tests | **30 host suites per display profile** pass with address/undefined-behavior sanitizers. [GitHub Actions](https://github.com/albash0/MiniConsole/actions). |
 | Firmware | OLED and TFT profiles compiled for the public source release. |
-| Physical devices | Development records document OLED/TFT bring-up and nearby two-console co-op/battle testing. The source release itself did not include a new device flash or gameplay run. |
+| Physical devices | The [build photographs](#from-prototype-to-finished-handheld) show OLED/TFT assemblies and enclosure iteration. Development records document bring-up and nearby two-console co-op/battle testing. The source release itself did not include a new device flash or gameplay run. |
 | CAD and fabrication | Editable KiCad designs, BOMs, fabrication files, and individual case parts are supplied. Physical assembly tolerances still need checking. |
 | Open measurements | Battery runtime, defined wireless range, and repeatable frame-time comparisons remain to be measured. |
 
@@ -73,6 +80,12 @@ Dates below come from dated validation notes and source/CAD records; early dates
 
 
 ## Games and controls
+
+| Snake | Micro Motorways | Pocket Partners |
+| --- | --- | --- |
+| ![Native TFT Snake renderer](docs/media/snake.png) | ![Micro Motorways traffic simulation](docs/media/motorways.png) | ![Pocket Partners co-op room](docs/media/partners.png) |
+
+*Host-rendered frames from the firmware's TFT renderer, separate from the physical build photographs above.*
 
 The main library includes **Snake, Tetris, Breakout, Invaders, Sokoban, Doom, Micro Motorways, and Pocket Partners**. Tetris also has a two-console Block Battle mode. Pocket Partners has ten cooperative platform-puzzle rooms, and Sokoban has ten original puzzles.
 

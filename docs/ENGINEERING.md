@@ -42,11 +42,11 @@ This was a source-level fix, validated with both host display profiles and both 
 
 The keyed case couples PCB mounting axes, screen height, switch travel, button retention, and battery clearance. Individual STEP and STL parts are supplied with two front and two plain rear choices. The thicker rear floor reduces internal battery clearance; assembly notes describe that constraint.
 
-The case files document a design and previous fit iteration. Printer tolerance and the complete assembled stack still need physical checking. [Case geometry and assembly notes](../hardware/case/README.md).
+The [build photographs](../README.md#from-prototype-to-finished-handheld) show the OLED protoboard, custom TFT PCB, a printed enclosure fit test, and assembled handhelds. They document physical iteration; printer tolerance, button travel, and the complete internal battery/cable stack still need checking for a reproduced build. [Case geometry and assembly notes](../hardware/case/README.md).
 
 ## Next useful measurements
 
 - Compare display-transfer time and game frame time on both versions under a repeatable workload.
 - Measure battery current and runtime with a specified cell and display brightness.
 - Record wireless range and recovery behavior in a defined test environment.
-- Document complete case assembly, button feel, and battery/cable clearance with photographs.
+- Measure button travel and document the complete internal battery/cable stack and assembly clearances.
